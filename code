@@ -1,0 +1,58 @@
+public class MergeSort
+{
+  
+  public static int[] merge(int[] a, int[] b)
+  {
+    int length1 = a.length;
+    int length2 = b.length;
+    
+    int pos1 = 0;
+    int pos2 = 0;
+    
+    
+    
+    int [] newArr = new int[length1 + length2];
+    int index = 0;
+    
+    while (pos1 < a.length && pos2 < b.length )
+    {
+      if (a[pos1] < b[pos2])
+      {
+        newArr[index] = a[pos1];
+        index++;
+        pos1++;
+      }
+      else{
+        newArr[index] = b[pos2];
+        index++;
+        pos2++;
+        
+      }
+      
+      
+    }
+    
+    if ( pos1 < a.length)
+    {
+      for (int i = pos1; i < a.length; i++)
+      {
+        newArr[index] = a[i];
+        index++;
+      }
+      
+    }
+    
+    if ( pos2 < b.length)
+    {
+      for (int i = pos2; i < b.length; i++)
+      {
+        newArr[index] = b[i];
+        index++;
+      }
+      
+    }
+    return newArr;
+  }
+   
+}
+  
